@@ -1,0 +1,8 @@
+Enable in Settings -> Storage.
+
+Listing documents (returns json blob): http://10.11.99.1/documents/
+Listing documents in folder: http://10.11.99.1/documents/${folder_id}/
+Getting thumbnail for last opened page: http://10.11.99.1/thumbnail/${document_id}
+Upload/import (standard POST call, with 'file' parameter, accepts pdfs and epubs): http://10.11.99.1/upload/
+Download (svg or zip with pngs): http://10.11.99.1/download/${document_id}/{pdf,png}
+All other requests are served from /usr/share/remarkable/webui/
