@@ -114,13 +114,14 @@ public class FileSystem {
         RemoteFileSystemObject target = remoteFiles.get(targetId);
         File localFile = localFiles.get(targetId);
         if(target.type.equals(RemoteFileSystemObject.TYPE_FOLDER)) return -2; // can't download folders
-        if(target.compareTo(localFile.lastModified()) >= 0){ // if remote is newer than local
+        //TODO: newness feature is buggy
+        //if(target.compareTo(localFile.lastModified()) >= 0){ // if remote is newer than local
             System.out.println("saving " + targetId + " to " + localFile.getAbsolutePath());
             target.saveToLocalSystem(localFiles.get(targetId)); // save this object to the file it maps to locally
-        }
-        else{
-            System.out.println("local is newer, skipping " + targetId);
-        }
+        //}
+        //else{
+            //System.out.println("local is newer, skipping " + targetId);
+        //}
         return 0; // success
     }
 
